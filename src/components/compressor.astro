@@ -1,0 +1,80 @@
+---
+import * as content from './content';
+
+const {currentRegion} = Astro.props
+const title = content.compressor[currentRegion].title
+const description = content.compressor[currentRegion].description
+const dragAndDrop = content.compressor[currentRegion].drag
+const or = content.compressor[currentRegion].or
+const compressing = content.compressor[currentRegion].compressing
+const download = content.compressor[currentRegion].download
+const originalSize = content.compressor[currentRegion].original_size
+const newSize = content.compressor[currentRegion].new_size
+
+---
+<div class="p-6 m-5 rounded-lg bg-white dark:bg-gray-800">
+  <header class="flex flex-col items-center justify-center space-y-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="w-12 h-12 text-gray-500 dark:text-gray-400"
+    >
+      <path d="m15 15 6 6m-6-6v4.8m0-4.8h4.8"></path>
+      <path d="M9 19.8V15m0 0H4.2M9 15l-6 6"></path>
+      <path d="M15 4.2V9m0 0h4.8M15 9l6-6"></path>
+      <path d="M9 4.2V9m0 0H4.2M9 9 3 3"></path>
+    </svg>
+    <h1 class="text-2xl font-bold text-gray-700 dark:text-gray-200">{title}</h1>
+    <p class="text-gray-500 dark:text-gray-400">{description}</p>
+  </header>
+
+  <section class="mt-6 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-md transition-colors hover:border-primary dark:hover:border-primary">
+    <div class="flex flex-col items-center justify-center space-y-4 p-6">
+      <div class="text-center no-hide">
+        <p class="font-medium">{dragAndDrop}</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">{or}</p>
+        <input type="file" accept="image/*" id="image" class="cursor-pointer text-primary underline">
+      </div>
+      <img src="" alt="" class="w-full h-64 object-cover rounded-md hidden" id="output" >
+    </div>
+  </section>
+
+  <section class="mt-8 ">
+    <div id="loading" class="hidden flex items-center justify-center">
+      <p class="text-gray-500 dark:text-gray-400">{compressing}</p>
+      <!-- You can replace the paragraph with an actual spinner icon or image if you prefer -->
+    </div>
+    <div class="mt-4 grid gap-2 hidden" id="info-container">
+      <div class="flex justify-between">
+        <span class="text-gray-500 dark:text-gray-400 font-medium">{originalSize}</span>
+        <span class="text-gray-500 dark:text-gray-400"><span id="orig-size"> </span></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-gray-500 dark:text-gray-400 font-medium">{newSize}</span>
+        <span class="text-gray-500 dark:text-gray-400"><span id="new-size"> </span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex items-center justify-center mt-6">
+    <span class="text-green-500" id="compression-success"></span>
+  </section>
+
+  <div class="flex items-center justify-center mt-6 " id="dl-container">
+      <a id="download-link" href="#" download="output.png"><span class="text-blue-500" id="compression-download"></span></a>
+  </div>
+</div>
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+

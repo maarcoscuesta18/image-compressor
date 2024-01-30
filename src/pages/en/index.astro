@@ -1,0 +1,39 @@
+---
+import Compressor from '../../components/compressor.astro'
+import Instructions from '../../components/instructions.astro'
+import Footer from '../../components/footer.astro'
+import ChangeLanguage from '../../components/changeLanguage.astro'
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fast and Efficient Image Compressor - Compress Images Online for Free</title>
+		<meta name="description" content="Compress your images quickly and efficiently without losing quality. Our online image compressor is free and easy to use, supporting various image formats.">
+		<meta name="keywords" content="image compressor, compress images, online image compressor, free image compression, image size reducer, reduce image size, optimize images">
+		<link rel="canonical" href="https://www.yourwebsite.com/">
+		<meta property="og:title" content="Fast and Efficient Image Compressor - Compress Images Online for Free">
+		<meta property="og:description" content="Compress your images quickly and efficiently without losing quality with our online tool.">
+		<meta property="og:image" content="https://www.yourwebsite.com/image-compressor-thumbnail.jpg">
+		<meta property="og:url" content="https://www.yourwebsite.com/">
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Fast and Efficient Image Compressor - Compress Images Online for Free">
+		<meta name="twitter:description" content="Compress your images quickly and efficiently without losing quality with our online tool.">
+		<meta name="twitter:image" content="https://www.yourwebsite.com/image-compressor-thumbnail.jpg">
+		<meta name="generator" content={Astro.generator} />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
+	</head>
+	<body class="dark:bg-gray-900 w-full max-w-2xl mx-auto dark:text-gray-300">
+		<ChangeLanguage/>
+		<Compressor currentRegion="en"/>
+		<Instructions currentRegion="en"/>
+		<Footer currentRegion="en"/>
+	</body>
+	<script>
+		import "../../components/serviceWorker.js"
+	</script>
+</html>

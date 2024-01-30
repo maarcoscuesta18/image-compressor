@@ -1,0 +1,14 @@
+---
+import * as content from './content';
+
+const {currentRegion} = Astro.props
+const name = content.instructions.instructions[currentRegion]
+---
+<section class="p-6 m-5 bg-gray-100 dark:bg-gray-700 rounded-md">
+    <h2 class="text-lg font-bold text-gray-700 dark:text-gray-200">{name}</h2>
+    <ol class="list-decimal list-inside space-y-2">
+      {content.instructions[currentRegion].map((step, index) => (
+        <li class="text-gray-600 dark:text-gray-400">{step}</li>
+      ))}
+    </ol>
+  </section>

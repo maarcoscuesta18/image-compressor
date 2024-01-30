@@ -1,0 +1,40 @@
+---
+import Compressor from '../components/compressor.astro'
+import Instructions from '../components/instructions.astro'
+import Footer from '../components/footer.astro'
+import ChangeLanguage from '../components/changeLanguage.astro'
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Compresor de Imágenes Rápido y Eficiente - Comprime Imágenes en Línea Gratis</title>
+		<meta name="description" content="Comprime tus imágenes de manera rápida y eficiente sin perder calidad. Nuestro compresor de imágenes en línea es gratuito y fácil de usar, compatible con varios formatos de imagen.">
+		<meta name="keywords" content="compresor de imágenes, comprimir imágenes, compresor de imágenes en línea, compresión de imágenes gratuita, reductor de tamaño de imagen, reducir tamaño de imagen, optimizar imágenes">
+		<link rel="canonical" href="https://www.tusitioweb.com/">
+		<meta property="og:title" content="Compresor de Imágenes Rápido y Eficiente - Comprime Imágenes en Línea Gratis">
+		<meta property="og:description" content="Comprime tus imágenes de manera rápida y eficiente sin perder calidad con nuestra herramienta en línea.">
+		<meta property="og:image" content="https://www.tusitioweb.com/miniatura-compresor-de-imagenes.jpg">
+		<meta property="og:url" content="https://www.tusitioweb.com/">
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Compresor de Imágenes Rápido y Eficiente - Comprime Imágenes en Línea Gratis">
+		<meta name="twitter:description" content="Comprime tus imágenes de manera rápida y eficiente sin perder calidad con nuestra herramienta en línea.">
+		<meta name="twitter:image" content="https://www.tusitioweb.com/miniatura-compresor-de-imagenes.jpg">
+		<meta name="generator" content={Astro.generator} />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
+		
+	</head>
+	<body class="dark:bg-gray-900 w-full max-w-2xl mx-auto dark:text-gray-300">
+		<ChangeLanguage/>
+		<Compressor currentRegion="es"/>
+		<Instructions currentRegion="es" />
+		<Footer currentRegion="es"/>
+	</body>
+	<script>
+		import "../components/serviceWorker.js"
+	</script>
+</html>
