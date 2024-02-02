@@ -11,8 +11,8 @@ image.addEventListener('change', async function() {
 
   // SET OPTIONS
   const options = {
-      maxSizeMB: .3,
-      maxWidthOrHeight: 1000,
+      maxSizeMB: document.getElementById('maxsize').value,
+      maxWidthOrHeight: document.getElementById('resolution').value,
       useWebWorker: true
   }
 

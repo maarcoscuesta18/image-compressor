@@ -33,7 +33,7 @@ export const footer = {
 export const compressor = {
   "en": {
     "title": "Image compressor",
-    "description": "Compress your images for free, maintaining the quality of the image.",
+    "description": "Compress your images for free, maintaining the quality of the image. No image will be stored on the server.",
     "button": "Compress image",
     "compressing": "Compressing...",
     "drag": "Drag & Drop your image",
@@ -45,7 +45,7 @@ export const compressor = {
   },
   "es": {
     "title": "Compresor de imágenes",
-    "description": "Comprime tus imágenes de forma gratuita, manteniendo la calidad de la imagen.",
+    "description": "Comprime tus imágenes de forma gratuita, manteniendo la calidad de la imagen. Ninguna imagen se almacena en el servidor.",
     "button": "Comprimir imagen",
     "compressing": "Comprimiendo...",
     "drag": "Arrastra y suelta tu imagen",
@@ -57,7 +57,7 @@ export const compressor = {
   },
   "pt-br": {
     "title": "Compressor de imagens",
-    "description": "Comprima suas imagens gratuitamente, mantendo a qualidade da imagem.",
+    "description": "Comprima suas imagens gratuitamente, mantendo a qualidade da imagem. Nenhuma imagem será armazenada no servidor.",
     "button": "Comprimir imagem",
     "compressing": "Comprimindo...",
     "drag": "Arraste e solte sua imagem ",
