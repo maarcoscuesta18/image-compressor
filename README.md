@@ -17,8 +17,8 @@ Image Compressor is a tool designed to reduce the file size of images without si
 This project requires [Node.js](https://nodejs.org/) to run locally. After installing Node.js, clone this repository and install the dependencies.
 
 ```bash
-git clone https://github.com/maarcoscuesta18/compresor-imagenes.git
-cd compresor-imagenes
+git clone https://github.com/maarcoscuesta18/image-compressor.git
+cd image-compressor
 npm install
 
 
