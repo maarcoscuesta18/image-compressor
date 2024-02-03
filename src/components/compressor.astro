@@ -11,6 +11,7 @@ const download = content.compressor[currentRegion].download
 const originalSize = content.compressor[currentRegion].original_size
 const newSize = content.compressor[currentRegion].new_size
 
+
 ---
 <div class="p-6 m-5 rounded-lg bg-white dark:bg-gray-800">
   <header class="flex flex-col items-center justify-center space-y-4">
@@ -35,8 +36,8 @@ const newSize = content.compressor[currentRegion].new_size
     <p class="text-gray-500 dark:text-gray-400">{description}</p>
   </header>
 
-  <section class="mt-6 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-md transition-colors hover:border-primary dark:hover:border-primary">
-    <div class="flex w-full justify-around">
+  <section class="">
+    <div class="grid grid-cols-1 md:grid-cols-2">
       <div class="flex items-center justify-center mt-6">
         <label for="maxsize" class="text-gray-500 dark:text-gray-400">Max Size:</label>
         <select id="maxsize" class="ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -69,14 +70,21 @@ const newSize = content.compressor[currentRegion].new_size
         </select>
       </div> 
     </div>
-    <div class="flex flex-col items-center justify-center space-y-4 p-6">
-      <div class="text-center no-hide">
-        <p class="font-medium">{dragAndDrop}</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">{or}</p>
-        <input type="file" accept="image/*" id="image" class="cursor-pointer text-primary underline">
-      </div>
-      <img src="" alt="" class="w-full h-64 object-cover rounded-md hidden" id="output" >
-    </div>
+    <div class="flex items-center justify-center w-full mt-5">
+      <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+          <div id="dragdropinput">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+              <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+              </svg>
+              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click</span> {or} {dragAndDrop}</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF</p>
+            </div>
+            <input id="dropzone-file" accept="image/*" type="file" hidden />
+          </div>
+          <img src="" alt="" class="w-full h-64 object-cover rounded-md hidden" id="output" >
+        </label>
+    </div> 
   </section>
 
   <section class="mt-8 ">
@@ -107,6 +115,12 @@ const newSize = content.compressor[currentRegion].new_size
 <style>
   .hidden {
     display: none;
+  }
+  #output {
+    object-fit: cover; /* Cover the dropzone area */
+    width: 100%; /* Ensure it spans the full width */
+    height: 100%; /* Ensure it spans the full height */
+    border-radius: inherit; /* Optional: Inherit border-radius from the dropzone */
   }
 </style>
 

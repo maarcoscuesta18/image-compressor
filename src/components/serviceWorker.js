@@ -4,7 +4,7 @@ function readableBytes(bytes) {
   return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
 }
 
-let image = document.querySelector('#image');
+let image = document.querySelector('#dropzone-file');
 image.addEventListener('change', async function() {
   // GET IMAGE
   const imageFile = this.files[0];
@@ -34,7 +34,9 @@ image.addEventListener('change', async function() {
       // SET OUTPUT IMAGE
       let output = document.querySelector('#output');
       var img = document.getElementById('output');
+      var dragDiv = document.getElementById('dragdropinput');
       img.classList.remove('hidden'); 
+      dragDiv.classList.add('hidden'); 
     
       output.src = URL.createObjectURL(compressedFile);
 
