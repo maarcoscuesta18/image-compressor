@@ -13,3 +13,4 @@ Image Compressor is a tool designed to reduce the file size of images without si
 - **Preview and Download**: Preview compressed images before downloading them individually or in a batch.
 
 
+
