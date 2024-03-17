@@ -12,13 +12,4 @@ Image Compressor is a tool designed to reduce the file size of images without si
 - **Quality Control**: Option to adjust the compression level to balance between quality and file size.
 - **Preview and Download**: Preview compressed images before downloading them individually or in a batch.
 
-## Installation
-
-This project requires [Node.js](https://nodejs.org/) to run locally. After installing Node.js, clone this repository and install the dependencies.
-
-```bash
-git clone https://github.com/maarcoscuesta18/compresor-imagenes.git
-cd compresor-imagenes
-npm install
-
 
